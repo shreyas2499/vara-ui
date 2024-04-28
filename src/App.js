@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("http://127.0.0.1:8000/vara/energy/")
+    fetch("http://vara-new-api.eba-8td7muy2.us-west-2.elasticbeanstalk.com/vara/energy/")
       .then(response => response.json())
       .then((energy) => this.setState(() => {
         return { values: energy }

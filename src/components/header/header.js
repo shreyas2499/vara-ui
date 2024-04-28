@@ -46,7 +46,7 @@ function HeaderFun(args) {
         };
 
         // Make a POST request to your API
-        fetch('http://127.0.0.1:8000/vara/login/', {
+        fetch('http://vara-new-api.eba-8td7muy2.us-west-2.elasticbeanstalk.com/vara/login/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ function HeaderFun(args) {
             password: registerPassword
         };
 
-        fetch('http://127.0.0.1:8000/vara/register/', {
+        fetch('http://vara-new-api.eba-8td7muy2.us-west-2.elasticbeanstalk.com/vara/register/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
