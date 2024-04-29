@@ -136,7 +136,7 @@ class App extends Component {
                   <div class="col-4"></div>
                   <div class="col-1">
                     <label for="monthSelect" style={{marginLeft:"20%", fontWeight:900, fontSize:"20px"}}>
-                      <abbr style={{textDecoration: "underline", cursor: "pointer"}} title="Hold down the Ctrl (Windows) or Command (Mac) button to select multiple options.">Select Months:</abbr>
+                      <abbr style={{textDecoration: "underline", cursor: "pointer"}} title="Hold down the Ctrl (Windows) or Command (Mac) button to select multiple options.">Select Months*:</abbr>
                     </label><br/>
                       <select id="monthSelect" multiple value={selectedMonths} onChange={(e) => this.handleMonthSelect(Array.from(e.target.selectedOptions, option => option.value))}>
                         <option value="1">January</option>
@@ -156,7 +156,7 @@ class App extends Component {
                   <div className='col-1'></div>
                   <div class="col-1">
                     <label for="graphSelect" style={{marginLeft:"20%", fontWeight:900, fontSize:"20px"}}>
-                      <abbr style={{textDecoration: "underline", cursor: "pointer"}} title="Hold down the Ctrl (Windows) or Command (Mac) button to select multiple options.">Select Graphs:</abbr>
+                      <abbr style={{textDecoration: "underline", cursor: "pointer"}} title="Hold down the Ctrl (Windows) or Command (Mac) button to select multiple options.">Select Graphs*:</abbr>
                     </label><br/>
                       <select id="graphSelect" multiple value={selectedGraphs} onChange={(e) => this.handleGraphSelect(Array.from(e.target.selectedOptions, option => option.value))}>
                         <option value="Water">Water</option>
@@ -167,6 +167,11 @@ class App extends Component {
                       </select>
                   </div>
                   <div class="col-4"></div>
+                </div>
+                <div className='row' style={{fontSize:"12px"}}>
+                  <div className='col-4'></div>
+                  <div className='col-3'>*Hold down the Ctrl (Windows) or Command (Mac) button to select multiple options.</div>
+                  <div className='col-4'></div>
                 </div>
               </div>
 
