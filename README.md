@@ -36,6 +36,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   2) User can select the filter the graphs based on the graph type and the months.
   3) The selected changes will be stored as User Preferences, ensuring that when the user logs in again, the `same selections` would be visible.
 
+- Demo account
+  A demo account is created with the credentials for the purpose of testing. Please find the credentials below:
+  email: admin@gmail.com
+  password: admin
 
 # Local Setup
 - `Git clone` the repository
