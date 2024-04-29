@@ -2,69 +2,54 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Production Server
+- Backend Server: https://vara-new-api.eba-8td7muy2.us-west-2.elasticbeanstalk.com/
+- Frontend Server: https://main.d271r6z8tdry4i.amplifyapp.com/
 
-In the project directory, you can run:
+## Repository Links
+- Backend Repository: https://github.com/shreyas2499/vara-api
+- Frontend Repository: https://github.com/shreyas2499/vara-ui
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `Note` 
+  Since, I was not able to buy a domain name for this assessment, the browser throws a SSL certificate issue. I have added a manually signed certificate, but browsers do not completely accept it. So in order to get the production application running, please follow the steps below:
+  1) Go to the Backend Server link. You should be able to see a page like below: ![Screenshot 2024-04-29 at 00 13 15](https://github.com/shreyas2499/vara-ui/assets/59840906/8f678190-91e5-4ce4-89b2-2accd2340770)
+  2) Please click on the `Advanced` button to proceed. Once you click on that, you should be able to see this screen: ![Screenshot 2024-04-29 at 00 13 22](https://github.com/shreyas2499/vara-ui/assets/59840906/6e97700a-2e61-485c-a12b-b0f7ef49fc95)
+  3) Click on `Proceed to vara-new-api.eba-8td7muy2.us-west-2.elasticbeanstalk.com (unsafe)` option. Once you have done this, you are all set to use the application!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
+1) Backend: Django
+2) Database: Sqlite3
+3) Frontend: React
+4) Backend Deployment Server: AWS ElasticBeanstalk
+5) Frontend Deployment Server: AWS Amplify
 
-### `npm test`
+## Key Features
+- Product Deployed on AWS
+  1) Frontend Deployed using AWS Amplify
+  2) Backend Deployed using AWS ElasticBeanstalk
+     
+- Before Logging In
+  1) Hoverable Graphs: Hovering on Data Points will give you the values.
+  2) Interactive Graphs: The user can select and deselect the Legends `on` a Graph.
+ 
+- User Registration
+  1) User can create an account and ensure that their `preferences` are stored.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- User Login
+  1) User can login and make use of the additional features such as filtering.
+  2) User can select the filter the graphs based on the graph type and the months.
+  3) The selected changes will be stored as User Preferences, ensuring that when the user logs in again, the `same selections` would be visible.
 
-### `npm run build`
+- Demo account
+  A demo account is created with the credentials for the purpose of testing. Please find the credentials here:
+  - email: admin@gmail.com
+  - password: admin
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Local Setup
+- `Git clone` the repository
+- Move into the project's root folder by using `cd`
+- Run `npm install`
+- Run `npm start`
+- You should be able to the see the local url in the terminal. Click on the link in your terminal to get started!
+   
