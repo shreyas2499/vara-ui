@@ -7,8 +7,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Frontend Server: https://main.d271r6z8tdry4i.amplifyapp.com/
 
 ## Repository Links
-- Backend Server: https://github.com/shreyas2499/vara-api
-- Frontend Server: https://github.com/shreyas2499/vara-ui
+- Backend Repository: https://github.com/shreyas2499/vara-api
+- Frontend Repository: https://github.com/shreyas2499/vara-ui
 
 
 ### `Note` 
