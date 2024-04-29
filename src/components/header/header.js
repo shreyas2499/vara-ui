@@ -73,6 +73,7 @@ function HeaderFun(args) {
                     setRegisterEmail("")
                     setRegisterPassword("")
                     localStorage.setItem("loggedIn", "true")
+                    localStorage.setItem("email", data.email)
                     setLogin(true)
                     window.location.reload()
                 }
@@ -131,6 +132,7 @@ function HeaderFun(args) {
 
     const logout = () => {
         localStorage.removeItem("loggedIn")
+        localStorage.removeItem("email")
         window.location.reload()
     }
 
@@ -141,15 +143,15 @@ function HeaderFun(args) {
                 {!localStorage.getItem("loggedIn") &&
                     (
                         <>
-                            <NavbarText style={{ float: "right", position: 'relative', left: '42vw' }} onClick={toggleLoginModal}>Login</NavbarText>
-                            <NavbarText onClick={toggleRegisterModal}>Register</NavbarText>
+                            <NavbarText style={{ float: "right", position: 'relative', left: '40vw', cursor: "pointer" }} onClick={toggleLoginModal}>Login</NavbarText>
+                            <NavbarText style={{cursor: "pointer" }} onClick={toggleRegisterModal}>Register</NavbarText>
                         </>
                     )
 
                 }
                 {localStorage.getItem("loggedIn") &&
                     (
-                        <NavbarText onClick={logout}>Logout</NavbarText>
+                        <NavbarText style={{cursor: "pointer" }} onClick={logout}>Logout</NavbarText>
                     )
 
                 }

@@ -15,8 +15,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      values: {}
-
+      values: {},
+      selectedMonths: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+      selectedGraphs: ["Water", "Food", "GridSolar", "Gas", "Steam"]
     }
   }
 
@@ -29,8 +30,99 @@ class App extends Component {
         () => {
           console.log(this.state.values.vals["Water consumption (m3)"])
         }))
+
+    if (localStorage.getItem("email")) {
+      const requestBody = {
+        email: localStorage.getItem("email"),
+      };
+      fetch("https://vara-new-api.eba-8td7muy2.us-west-2.elasticbeanstalk.com/vara/getPreferences/", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+      })
+        .then(response => response.json())
+        .then(pref => this.setState({
+          selectedMonths: pref.months,
+          selectedGraphs: pref.graphs
+        }))
+    }
   }
 
+  handleMonthSelect = (selectedMonths) => {
+    this.setState({ selectedMonths });
+    // http://127.0.0.1:8000/
+
+    // Style the multiselect
+
+
+    const requestBody = {
+      email: localStorage.getItem("email"),
+      months: selectedMonths
+    };
+
+    fetch('https://vara-new-api.eba-8td7muy2.us-west-2.elasticbeanstalk.com/vara/userPreferences/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestBody)
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Update failed');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('User Preferences:', data);
+        // this.setState({
+        //   selectedMonths: data.months,
+        //   selectedGraphs: data.graphs
+        // })
+      })
+      .catch(error => {
+        console.error('Login error:', error.message);
+        // setErrorMessage(error.message)
+      });
+
+  }
+
+  handleGraphSelect = (selectedGraphs) => {
+    this.setState({ selectedGraphs });
+
+    const requestBody = {
+      email: localStorage.getItem("email"),
+      graphs: selectedGraphs
+    };
+
+    fetch('https://vara-new-api.eba-8td7muy2.us-west-2.elasticbeanstalk.com/vara/userPreferences/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestBody)
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Update failed');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('User Preferences:', data);
+        // this.setState({
+        //   selectedMonths: data.months,
+        //   selectedGraphs: data.graphs
+        // })
+      })
+      .catch(error => {
+        console.error('Login error:', error.message);
+        // setErrorMessage(error.message)
+      });
+
+  }
 
   capitalizeWords(str) {
     return str.replace(/\b\w/g, function (char) {
@@ -40,7 +132,7 @@ class App extends Component {
 
 
   render() {
-    const { values } = this.state;
+    const { values, selectedMonths, selectedGraphs } = this.state;
     const isDataAvailable = values && values.vals;
     return (
       <>
@@ -50,35 +142,62 @@ class App extends Component {
           {/* Filter to select the Month and Fields */}
           {localStorage.getItem("loggedIn") &&
             (
-              <>
-              <h1>h1</h1>
-              <hr/>
-              </>
+              <div className='row'>
+                <div className='col-5'></div>
+                <div className="col-1">
+                  <label><abbr style={{ textDecoration: "underline", cursor: "pointer" }} title="Hold down the Ctrl (windows) or Command (Mac) button to select multiple options.">Select Months: </abbr></label><br />
+                  <select multiple value={selectedMonths} onChange={(e) => this.handleMonthSelect(Array.from(e.target.selectedOptions, option => option.value))}>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                </div>
+                <div class="col-1">
+                  <label><abbr style={{ textDecoration: "underline", cursor: "pointer" }} title="Hold down the Ctrl (windows) or Command (Mac) button to select multiple options.">Select Graphs: </abbr></label><br />
+                  <select multiple value={selectedGraphs} onChange={(e) => this.handleGraphSelect(Array.from(e.target.selectedOptions, option => option.value))}>
+                    <option value="Water">Water</option>
+                    <option value="Gas">Gas</option>
+                    <option value="GridSolar">Grid Solar</option>
+                    <option value="Steam">Steam</option>
+                    <option value="Food">Food</option>
+                  </select>
+                </div>
+                <div className='col-5'></div>
+              </div>
             )
 
           }
 
           <div class="row">
-            {isDataAvailable && (
-              <>
-                <Water state={this.state} />
-                <Food state={this.state} />
-              </>
+            {isDataAvailable && selectedGraphs.includes("Water") && (
+              <Water state={this.state} selectedMonths={selectedMonths} />
+            )}
+            {isDataAvailable && selectedGraphs.includes("Food") && (
+              <Food state={this.state} selectedMonths={selectedMonths} />
             )}
           </div>
 
           <div class="row secondRow">
-            {isDataAvailable && (
-              <GridSolar state={this.state} />
+            {isDataAvailable && selectedGraphs.includes("GridSolar") && (
+              <GridSolar state={this.state} selectedMonths={selectedMonths} />
             )}
           </div>
 
           <div class="row secondRow">
-            {isDataAvailable && (
-              <>
-                <Steam state={this.state} />
-                <Gas state={this.state} />
-              </>
+            {isDataAvailable && selectedGraphs.includes("Steam") && (
+              <Steam state={this.state} selectedMonths={selectedMonths} />
+            )}
+            {isDataAvailable && selectedGraphs.includes("Gas") && (
+              <Gas state={this.state} selectedMonths={selectedMonths} />
             )}
           </div>
         </div>
@@ -88,3 +207,8 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+
+

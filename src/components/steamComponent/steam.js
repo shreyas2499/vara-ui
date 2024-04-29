@@ -24,15 +24,39 @@ function Steam(args) {
         });
     }
 
+    const dataPoints = (points, selectedPoints) => {
+        const filteredIndexes = [];
+        for (let i = 0; i < selectedPoints.length; i++) {
+            const index = parseInt(selectedPoints[i], 10) - 1;
+            if (index >= 0 && index < points.length) { 
+                filteredIndexes.push(points[index]);
+            }
+        }
+
+        return filteredIndexes
+    }
+
+    const dataIndexes = (labels, selectedPoints) => {
+        const filteredIndexes = [];
+        for (let i = 0; i < selectedPoints.length; i++) {
+            const index = parseInt(selectedPoints[i], 10) - 1; 
+            if (index >= 0 && index < labels.length) {
+                filteredIndexes.push(labels[index]);
+            }
+        }
+
+        return filteredIndexes   
+    }
+
     return (
         <div className="dataCard leftDataCard col-5">
             <Line
                 data={{
-                    labels: args.state.values.vals['Steam Consumption (Tons)'].labels.map(label => capitalizeWords(label)),
+                    labels: dataIndexes(args.state.values.vals['Steam Consumption (Tons)'].labels.map(label => capitalizeWords(label)), args.selectedMonths),
                     datasets: [
                         {
                             label: args.state.values.vals['Steam Consumption (Tons)'].graphLabel,
-                            data: args.state.values.vals['Steam Consumption (Tons)'].data,
+                            data: dataPoints(args.state.values.vals['Steam Consumption (Tons)'].data, args.selectedMonths),
                             borderColor: "#692619",
                             backgroundColor: "rgba(217, 156, 174, 0.3)",
                             fill: true,
