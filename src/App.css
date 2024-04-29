@@ -1,48 +1,13 @@
 .App {
   text-align: center;
   overflow-x: hidden;
+  background-color: #dff1f2;
 }
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
 
 .dataCard {
   background-color: #efefef;
   border-radius: 0.5em;
-  box-shadow: rgba(42, 43, 43, 0.2) 5px 8px 24px;
+  box-shadow: rgba(42, 43, 43, 0.3) 5px 8px 24px;
   padding: 1em;
 }
 
@@ -61,11 +26,6 @@
   height: 20rem;
 }
 
-/* .dataCard canvas{
-  height: 100%!important;
-  width: 100%!important;
-} */
-
 .leftDataCard{
   margin-left: 3%;
   margin-right: 3%;
@@ -74,3 +34,36 @@
 .secondRow{
   margin-top: 50px!important
 }
+
+
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.col-1 {
+  text-align: center;
+}
+
+select {
+  width: 150%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  /* margin-top: 5px; */
+  font-size: 14px!important;
+  margin-right: 25px!important;
+  box-shadow: rgba(42, 43, 43, 0.2) 5px 8px 24px;;
+  margin-bottom: 10%!important;
+}
+
+label {
+  font-size: 14px;
+}
+
+.abbr {
+  text-decoration: underline;
+  cursor: pointer;
+}
+

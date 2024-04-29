@@ -123,7 +123,7 @@ function HeaderFun(args) {
 
     return (
         <div>
-            <Navbar className="my-2" color="secondary" dark>
+            <Navbar color="dark" dark style={{marginBottom:"0px!important"}}>
                 <NavbarBrand href="/">Vara</NavbarBrand>
                 {!localStorage.getItem("loggedIn") &&
                     (

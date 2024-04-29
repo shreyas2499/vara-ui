@@ -28,7 +28,7 @@ class App extends Component {
         return { values: energy }
       },
         () => {
-          
+
         }))
 
     if (localStorage.getItem("email")) {
@@ -76,7 +76,7 @@ class App extends Component {
         return response.json();
       })
       .then(data => {
-        
+
       })
       .catch(error => {
         console.error('Login error:', error.message);
@@ -131,37 +131,45 @@ class App extends Component {
           {/* Filter to select the Month and Fields */}
           {localStorage.getItem("loggedIn") &&
             (
-              <div className='row'>
-                <div className='col-5'></div>
-                <div className="col-1">
-                  <label><abbr style={{ textDecoration: "underline", cursor: "pointer" }} title="Hold down the Ctrl (windows) or Command (Mac) button to select multiple options.">Select Months: </abbr></label><br />
-                  <select multiple value={selectedMonths} onChange={(e) => this.handleMonthSelect(Array.from(e.target.selectedOptions, option => option.value))}>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                  </select>
+              <div class="container">
+                <div class="row">
+                  <div class="col-4"></div>
+                  <div class="col-1">
+                    <label for="monthSelect" style={{marginLeft:"20%", fontWeight:900, fontSize:"20px"}}>
+                      <abbr style={{textDecoration: "underline", cursor: "pointer"}} title="Hold down the Ctrl (Windows) or Command (Mac) button to select multiple options.">Select Months:</abbr>
+                    </label><br/>
+                      <select id="monthSelect" multiple value={selectedMonths} onChange={(e) => this.handleMonthSelect(Array.from(e.target.selectedOptions, option => option.value))}>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+                  </div>
+                  <div className='col-1'></div>
+                  <div class="col-1">
+                    <label for="graphSelect" style={{marginLeft:"20%", fontWeight:900, fontSize:"20px"}}>
+                      <abbr style={{textDecoration: "underline", cursor: "pointer"}} title="Hold down the Ctrl (Windows) or Command (Mac) button to select multiple options.">Select Graphs:</abbr>
+                    </label><br/>
+                      <select id="graphSelect" multiple value={selectedGraphs} onChange={(e) => this.handleGraphSelect(Array.from(e.target.selectedOptions, option => option.value))}>
+                        <option value="Water">Water</option>
+                        <option value="Gas">Gas</option>
+                        <option value="GridSolar">Grid Solar</option>
+                        <option value="Steam">Steam</option>
+                        <option value="Food">Food</option>
+                      </select>
+                  </div>
+                  <div class="col-4"></div>
                 </div>
-                <div class="col-1">
-                  <label><abbr style={{ textDecoration: "underline", cursor: "pointer" }} title="Hold down the Ctrl (windows) or Command (Mac) button to select multiple options.">Select Graphs: </abbr></label><br />
-                  <select multiple value={selectedGraphs} onChange={(e) => this.handleGraphSelect(Array.from(e.target.selectedOptions, option => option.value))}>
-                    <option value="Water">Water</option>
-                    <option value="Gas">Gas</option>
-                    <option value="GridSolar">Grid Solar</option>
-                    <option value="Steam">Steam</option>
-                    <option value="Food">Food</option>
-                  </select>
-                </div>
-                <div className='col-5'></div>
               </div>
+
             )
 
           }
