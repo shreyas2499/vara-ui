@@ -35,4 +35,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   1) User can login and make use of the additional features such as filtering.
   2) User can select the filter the graphs based on the graph type and the months.
   3) The selected changes will be stored as User Preferences, ensuring that when the user logs in again, the `same selections` would be visible.
+
+
+# Local Setup
+- `Git clone` the repository
+- Move into the project's root folder by using `cd`
+- Run `npm install`
+- Run `npm start`
+- You should be able to the see the local url in the terminal. Click on the link in your terminal to get started!
    
