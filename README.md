@@ -12,7 +12,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ### `Note` 
-  Since, I was not able to buy a domain name for this assessment, the browser throws a SSL certificate issue. I have added a manually signed certificate, but browsers do not completely accept it. So in order to get the production application running, please follow the steps below:
+  Since, I was not able to buy a domain name for this project, the browser throws a SSL certificate issue. I have added a manually signed certificate, but browsers do not completely accept it. So in order to get the production application running, please follow the steps below:
   1) Go to the Backend Server link. You should be able to see a page like below: ![Screenshot 2024-04-29 at 00 13 15](https://github.com/shreyas2499/vara-ui/assets/59840906/8f678190-91e5-4ce4-89b2-2accd2340770)
   2) Please click on the `Advanced` button to proceed. Once you click on that, you should be able to see this screen: ![Screenshot 2024-04-29 at 00 13 22](https://github.com/shreyas2499/vara-ui/assets/59840906/6e97700a-2e61-485c-a12b-b0f7ef49fc95)
   3) Click on `Proceed to vara-new-api.eba-8td7muy2.us-west-2.elasticbeanstalk.com (unsafe)` option. Once you have done this, you are all set to use the application!
