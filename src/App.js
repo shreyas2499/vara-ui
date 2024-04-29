@@ -28,7 +28,7 @@ class App extends Component {
         return { values: energy }
       },
         () => {
-          console.log(this.state.values.vals["Water consumption (m3)"])
+          
         }))
 
     if (localStorage.getItem("email")) {
@@ -76,15 +76,10 @@ class App extends Component {
         return response.json();
       })
       .then(data => {
-        console.log('User Preferences:', data);
-        // this.setState({
-        //   selectedMonths: data.months,
-        //   selectedGraphs: data.graphs
-        // })
+        
       })
       .catch(error => {
         console.error('Login error:', error.message);
-        // setErrorMessage(error.message)
       });
 
   }
@@ -111,15 +106,9 @@ class App extends Component {
         return response.json();
       })
       .then(data => {
-        console.log('User Preferences:', data);
-        // this.setState({
-        //   selectedMonths: data.months,
-        //   selectedGraphs: data.graphs
-        // })
       })
       .catch(error => {
         console.error('Login error:', error.message);
-        // setErrorMessage(error.message)
       });
 
   }

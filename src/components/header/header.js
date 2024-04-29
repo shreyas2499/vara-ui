@@ -39,13 +39,11 @@ function HeaderFun(args) {
     const toggleRegisterModal = () => setRegisterModal(!registerModal);
 
     const handleLogin = () => {
-        // Construct the request body
         const requestBody = {
             email: loginEmail,
             password: loginPassword
         };
 
-        // Make a POST request to your API
         fetch('https://vara-new-api.eba-8td7muy2.us-west-2.elasticbeanstalk.com/vara/login/', {
             method: 'POST',
             headers: {
@@ -60,9 +58,7 @@ function HeaderFun(args) {
                 return response.json();
             })
             .then(data => {
-                // Handle successful login
                 console.log('Login successful:', data);
-                // Close the modal after handling login
                 if (data.status == 500) {
                     setErrorMessage(data.message)
                 }
@@ -80,14 +76,12 @@ function HeaderFun(args) {
                 
             })
             .catch(error => {
-                // Handle login errors
                 console.error('Login error:', error.message);
-                // Optionally, display an error message to the user
+               
             });
     };
 
     const handleRegister = () => {
-        // Register logic
         const requestBody = {
             email: registerEmail,
             password: registerPassword

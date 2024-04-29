@@ -16,7 +16,7 @@ import {
 import { Line } from "react-chartjs-2";
 
 function Gas(args) {
-    console.log(args.state)
+    
 
     const capitalizeWords = (str) => {
         return str.replace(/\b\w/g, function (char) {
@@ -49,7 +49,7 @@ function Gas(args) {
     }
 
     return (
-        <div className="dataCard col-5">
+        <div className="dataCard leftDataCard col-5">
             <Line
                 data={{
                   labels: dataIndexes(args.state.values.vals['Natural gas consumption (m3)'].labels.map(label => capitalizeWords(label)), args.selectedMonths),

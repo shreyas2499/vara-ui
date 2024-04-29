@@ -16,7 +16,7 @@ import {
 import { Line } from "react-chartjs-2";
 
 function Food(args) {
-    console.log(args.state)
+    
 
     const capitalizeWords = (str) => {
         return str.replace(/\b\w/g, function (char) {

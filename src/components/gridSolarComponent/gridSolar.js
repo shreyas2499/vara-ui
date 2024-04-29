@@ -16,7 +16,7 @@ import {
 import { Bar } from "react-chartjs-2";
 
 function GridSolar(args) {
-    console.log(args.state)
+    
 
     const capitalizeWords = (str) => {
         return str.replace(/\b\w/g, function (char) {
