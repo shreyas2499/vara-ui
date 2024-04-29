@@ -174,7 +174,7 @@ class App extends Component {
 
           }
 
-          <div class="row">
+          <div class="row secondRow">
             {isDataAvailable && selectedGraphs.includes("Water") && (
               <Water state={this.state} selectedMonths={selectedMonths} />
             )}
